@@ -11,23 +11,18 @@ def main_page():
     return bt.template("index.html")
 
 
-@bt.route("/finished", method="GET")
-def finished():
-    return bt.template("finished.html")
-
-
 @bt.route("/dl", method="POST")
 def download_req():
     forms = bt.request.forms
     link = forms.get("link")
     video_format = forms.get("format")
+    default_metadata = forms.get("default-metadata")
+    metadata = {k[3:]: v for (k, v) in forms.items() if k.startswith("md-") and v != ""}
 
     try:
-        download_video.download(link, video_format)
+        return download_video.download(link, video_format, default_metadata, **metadata)
     except Exception as exc:
         raise bt.HTTPError(400, str(exc))
-
-    bt.redirect("/finished")
 
 
 @bt.route("/assets/<filepath:path>", method="GET")

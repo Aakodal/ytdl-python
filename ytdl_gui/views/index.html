@@ -18,6 +18,7 @@
 						<optgroup label="Audio only">
 							<option value="mp3" selected>MP3</option>
 							<option value="m4a">M4A</option>
+							<option value="webm-ao">WEBM (Audio only)</option>
 						</optgroup>
 						<optgroup label="Video only">
 							<option value="mp4-vo">MP4 (Video only)</option>
@@ -28,6 +29,23 @@
 							<option value="webm">WEBM</option>
 						</optgroup>
 					</select><br>
+				</div>
+
+				<p id="metadata-label" class="invisible-button">▼ Metadata</p><br>
+				<div id="metadata" hidden>
+					<label>
+						<input type="checkbox" id="default-metadata" name="default-metadata">
+						<span>Try to fetch every metadata possible</span>
+					</label><br>
+
+					<label for="artist">Artist</label>
+					<input name="md-artist" id="artist"><br>
+
+					<label for="title">Title</label>
+					<input name="md-title" id="title"><br>
+
+					<label for="album">Album</label>
+					<input name="md-album" id="album"><br>
 				</div>
 
 				<input type="submit" value="Download">
