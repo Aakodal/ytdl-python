@@ -5,8 +5,33 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-form > input, select {
+.invisible-button {
+    border: none;
+    background-color: inherit;
     margin: 0.3em;
+    font-size: 1em;
+}
+
+.invisible-button:focus {
+    background-color: inherit;
+}
+
+h1 {
+    size: 0.2em;
+}
+
+input, select {
+    margin: 0.3em;
+}
+
+label {
+    font-size: 1em;
+}
+
+input[type="submit"] {
+    margin-top: 1.3em;
 }

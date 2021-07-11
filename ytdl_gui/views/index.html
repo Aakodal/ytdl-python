@@ -2,31 +2,36 @@
 <html lang="en">
 <head>
 	% include("head.html")
-	<script defer src="/assets/js/submit.js"></script>
+	<script defer src="/assets/js/hidden.js"></script>
 </head>
 <body>
 	<div id="app">
+		<h1>YouTube Downloader</h1>
 		<form id="form" action="dl" method="post">
-			<label for="link">Link: </label>
-			<input name="link" id="link" required pattern="(https?:\/\/)?(youtube\.com\/watch\?v=|youtu.be\/)?[\w-]{11}"><br>
+			<fieldset>
+				<label for="link">Link</label>
+				<input name="link" id="link" required pattern="(https?:\/\/)?(youtube\.com\/watch\?v=|youtu.be\/)?[\w-]{11}"><br>
 
-			<label for="format">Format: </label>
-			<select name="format" id="format" required>
-				<optgroup label="Audio only">
-					<option value="mp3" selected>MP3</option>
-					<option value="m4a">M4A</option>
-				</optgroup>
-				<optgroup label="Video only">
-					<option value="mp4-o">MP4 (Video only)</option>
-					<option value="webm-o">WEBM (Video only)</option>
-				</optgroup>
-				<optgroup label="Audio & Video">
-					<option value="mp4">MP4</option>
-					<option value="webm">WEBM</option>
-				</optgroup>
-			</select><br>
+				<label for="format">Format</label>
+				<div class="input-field col s12">
+					<select name="format" id="format" required>
+						<optgroup label="Audio only">
+							<option value="mp3" selected>MP3</option>
+							<option value="m4a">M4A</option>
+						</optgroup>
+						<optgroup label="Video only">
+							<option value="mp4-vo">MP4 (Video only)</option>
+							<option value="webm-vo">WEBM (Video only)</option>
+						</optgroup>
+						<optgroup label="Audio & Video">
+							<option value="mp4">MP4</option>
+							<option value="webm">WEBM</option>
+						</optgroup>
+					</select><br>
+				</div>
 
-			<input type="submit" value="Download">
+				<input type="submit" value="Download">
+			</fieldset>
 		</form>
 		<p id="dl-text" hidden>Downloading...</p>
 	</div>
