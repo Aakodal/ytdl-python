@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	% include("head.html")
+</head>
+<body>
+    <div id="app">
+        <h1>Download finished</h1>
+	    <p>Redirecting...</p>
+    </div>
+	<script>
+		window.onload = () => {
+			setTimeout(() => window.location.href = "/", 1000);
+		};
+	</script>
+</body>
+</html>

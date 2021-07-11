@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	% include("head.html")
+	<script defer src="/assets/js/submit.js"></script>
+</head>
+<body>
+	<div id="app">
+		<form id="form" action="dl" method="post">
+			<label for="link">Link: </label>
+			<input name="link" id="link" required pattern="(https?:\/\/)?(youtube\.com\/watch\?v=|youtu.be\/)?[\w-]{11}"><br>
+
+			<label for="format">Format: </label>
+			<select name="format" id="format" required>
+				<optgroup label="Audio only">
+					<option value="mp3" selected>MP3</option>
+					<option value="m4a">M4A</option>
+				</optgroup>
+				<optgroup label="Video only">
+					<option value="mp4-o">MP4 (Video only)</option>
+					<option value="webm-o">WEBM (Video only)</option>
+				</optgroup>
+				<optgroup label="Audio & Video">
+					<option value="mp4">MP4</option>
+					<option value="webm">WEBM</option>
+				</optgroup>
+			</select><br>
+
+			<input type="submit" value="Download">
+		</form>
+		<p id="dl-text" hidden>Downloading...</p>
+	</div>
+</body>
+</html>
